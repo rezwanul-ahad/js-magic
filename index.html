@@ -1,0 +1,71 @@
+<!DOCTYPE html> 
+	<html lang="en"> 
+	<head> 
+	<!-- Meta Elements for Mobile --> 
+	<meta charset="utf-8"> 
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"> 
+	
+	<!-- Site Title --> 
+	<title>Javascript Magic</title> 
+	
+	<!-- Custom Fonts --> 
+	<link href="https://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet"> 
+	
+	<!-- Custom Stylesheet --> 
+	<link rel="stylesheet" type="text/css" href="magic.css"> 
+
+	
+	</head> 
+	<body> 
+	
+	<section id="tx"> 
+	<h1 id="head1"><span> Please Enter Your Message </span></h1> 
+	<textarea id="txbody" style="max-width: 80%; max-height: 150px"></textarea> 
+	<p id="p1">Character Remaining: <span id="p2">160</span></p> 
+	<h2 id="head2"><span> All Rights Reserved by Ahad </span></h2> 
+	</section> 
+	
+	
+	
+	<!-- Java Scirpt --> 
+	<script src="js/bootstrap.min.js"></script> 
+
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script> 
+
+	
+	<script type="text/javascript"> 
+	
+	$(document).ready(function(){ 
+	
+	var max_char = 160; 
+	
+	$('#txbody').keyup(function(){ 
+	var char_len = $('textarea').val().length; 
+	var char_len = max_char-char_len; 
+	$('#p2').text(char_len); 
+	
+	if ( char_len >= 0 && char_len <= 160 ) 
+	{ 
+	$('#txbody').addClass('blue'); 
+	$('#txbody').removeClass('red'); 
+	$('#p2').addClass('blue'); 
+	$('#p2').removeClass('red');
+	} 
+	else 
+	{ 
+	$('#txbody').addClass('red'); 
+	$('#txbody').removeClass('blue'); 
+	$('#p2').addClass('red'); 
+	$('#p2').removeClass('blue');
+	} 
+	}); 
+	
+	}); 
+	
+	</script> 
+	
+	
+	
+	</body> 
+	</html> 
